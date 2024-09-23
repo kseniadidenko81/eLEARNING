@@ -107,3 +107,25 @@
     
 })(jQuery);
 
+
+// Courses card
+$(document).ready(function() {
+    $('.card-course').on('click', function() {
+        let $description = $(this).find('.description');
+
+        if ($description.is(':visible')) {
+            $description.slideUp(500);
+            $(this).removeClass('active');
+        } else {
+            $description.slideDown(500);
+            $(this).addClass('active');
+        }
+    });
+
+    $('.description').on('click', function(event) {
+        event.stopPropagation();
+
+        $(this).slideUp(300);
+        $(this).closest('.card-course').removeClass('active');
+    });
+});
