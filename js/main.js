@@ -55,14 +55,18 @@
 
     
     // Active element menu
-    let currentPage = window.location.pathname.split("/").pop();
+    $(document).ready(function() {
+        let currentPage = window.location.pathname.split("/").pop();
 
-    $('.navbar-nav a').each(function() {
-        let linkPage = $(this).attr('href');
+        $('.navbar-nav a').first().removeClass('active');
 
-        if (linkPage === currentPage) {
-            $(this).addClass('active');
-        }
+        $('.navbar-nav a').each(function() {
+            let linkPage = $(this).attr('href');
+
+            if (linkPage === currentPage) {
+                $(this).addClass('active');
+            }
+        });
     });
 
     
