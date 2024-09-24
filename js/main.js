@@ -52,7 +52,19 @@
             $dropdown.off("mouseenter mouseleave");
         }
     });
+
     
+    // Active element menu
+    let currentPage = window.location.pathname.split("/").pop();
+
+    $('.navbar-nav a').each(function() {
+        let linkPage = $(this).attr('href');
+
+        if (linkPage === currentPage) {
+            $(this).addClass('active');
+        }
+    });
+
     
     // Back to top button
     $(window).scroll(function () {
