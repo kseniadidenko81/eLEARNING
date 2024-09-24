@@ -578,7 +578,7 @@ hr {
 }
 
 .card-01:before {
-    background: url(../img/course-01.jpg);
+    background-image: url(../img/course-01.jpg);
 }
 
 .card-02:before {
